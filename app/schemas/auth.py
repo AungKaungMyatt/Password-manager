@@ -1,0 +1,13 @@
+from pydantic import BaseModel, EmailStr, Field
+
+class UserRegister(BaseModel):
+    email: EmailStr # validates the email format
+    password: str = Field(min_length=8, max_length=128)
+
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
+
+class UserResponse(BaseModel):
+    id: int
+    email: str

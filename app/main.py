@@ -1,6 +1,10 @@
-def main():
-    print("Hello from password-manager!")
+from litestar import Litestar
+
+from app.api.auth import register
 
 
-if __name__ == "__main__":
-    main()
+app = Litestar(
+    route_handlers=[
+        register,
+    ]
+)
