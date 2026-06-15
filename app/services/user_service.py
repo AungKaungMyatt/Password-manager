@@ -16,7 +16,7 @@ async def get_user_by_email(
 
     return result.scalar_one_or_none()
 
-async deg create_user(
+async def create_user(
     db: AsyncSession,
     email: str,
     password: str,
